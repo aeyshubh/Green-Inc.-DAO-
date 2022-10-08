@@ -1,0 +1,39 @@
+{
+  "name": "greenincdao",
+  "version": "1.0.0",
+  "description": "It is a Web-application based on Web3(Polygon + Filecoin).We aim to provide a platform to Green companies to raise funds",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shxb7/Green-Inc.-DAO-.git"
+  },
+  "keywords": [
+    "Web3",
+    "DAO",
+    "Polygon",
+    "Fund",
+    "Gree_Organization"
+  ],
+  "author": "gunner26735 , shxb7 , phovious-14",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shxb7/Green-Inc.-DAO-/issues"
+  },
+  "homepage": "https://github.com/shxb7/Green-Inc.-DAO-#readme",
+  "dependencies": {
+    "axios": "^1.1.2",
+    "body-parser": "^1.20.1",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-static": "^1.2.6",
+    "mongoose": "^6.6.5",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20",
+    "web3": "^1.8.0"
+  }
+}

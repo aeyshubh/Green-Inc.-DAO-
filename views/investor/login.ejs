@@ -1,0 +1,42 @@
+<%-include('../include/_header.ejs') %>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+  <section>
+    <div class="container">
+      <div class="user signinBx">
+        <div class="imgBx"><img src="img/investor_1.png" alt="" /></div>
+        <div class="formBx">
+          <form action="/api/auth/investor" method="post">
+            <h2>Investor Sign In</h2>
+            <input type="text" name="email" placeholder="Email" />
+            <input type="password" name="pass" placeholder="Password" />
+            <input type="submit" name="" value="Login" />
+            <p class="signup">
+              Don't have an account ?
+              <a href="#" onclick="toggleForm();">Sign Up.</a>
+            </p>
+          </form>
+        </div>
+      </div>
+      <div class="user signupBx">
+        <div class="formBx">
+          <form action="/api/investor" method="post">
+            <h2>Investor Sign Up</h2>
+            <input type="text" name="name" placeholder="Username" />
+            <input type="email" name="email" placeholder="Email Address" />
+            <input type="password" name="pass1" placeholder="Create Password" />
+            <input type="password" name="pass2" placeholder="Confirm Password" />
+            <input type="submit" name="" value="Sign Up" />
+            <p class="signup">
+              Already have an account ?
+              <a href="#" onclick="toggleForm();">Sign in.</a>
+            </p>
+          </form>
+        </div>
+        <div class="imgBx"><img src="img/investor_2.jpg" alt="" /></div>
+      </div>
+    </div>
+  </section>
+</body>
+<%-include('../include/_footer.ejs') %>
