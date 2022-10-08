@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: white;
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bgImg{
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    position: absolute;
+}
+
+.bgImg img {
+    width: 100%;
+    max-height: 100%;
+    background-size: contain;
+}
+
+.chat {
+    font-size: 1.5rem;
+    margin: 100px;
+    border: none;
+    box-shadow: 0 0 0 0 white;
+    cursor: pointer;
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+@-webkit-keyframes pulse {
+    to {
+        box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);
+    }
+}
+
+@-moz-keyframes pulse {
+    to {
+        box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);
+    }
+}
+
+@-ms-keyframes pulse {
+    to {
+        box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);
+    }
+}
+
+@keyframes pulse {
+    to {
+        box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);
+    }
+}
+
+.chat a {
+    text-decoration: none;
+    color: #1b1b1b;
+    background-color: #66f3f1;
+    padding: 20px 40px;
+    transition: .4s;
+}
+
+.chat a:hover {
+    padding: 20px 100px 20px 100px;
+    letter-spacing: 10px;
+}
+
+div.container {
+    position: absolute;
+    z-index: 1;
+}
+
+#raise{
+    position: fixed;
+    left: -45px;
+    top: 20px;
+}
+
+#donate {
+    position: fixed;
+    right: -65px;
+    bottom: 20px;
+}
+
+.logo img{
+    width: 200px;
+}
