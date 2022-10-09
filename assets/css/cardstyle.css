@@ -58,6 +58,7 @@ ul li a {
     font-size: 1.2rem;
     margin: 0 10px 0 10px;
     padding: 10px 30px;
+    border: 1px solid transparent;
 }
 
 ul li a:hover {
@@ -65,39 +66,42 @@ ul li a:hover {
     border-radius: 20px;
 }
 
+#wallet:hover {
+    border: 1px solid #98FB98;
+    background-color: #98FB98;
+    color: #1b1b1b;
+}
+
 div.organization {
     position: relative;
-    min-height: 100vh;
+    min-height: 0vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 5rem;
     color: black;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: flex-start;
+    align-items:stretch;
     flex-direction: row;
     flex-wrap: wrap;
     width: 60%;
-    margin: 50px 10px;
+    margin-top: 10px;
 }
 
 .organization .card {
-    min-height: 200px;
+    min-height: 100px;
     min-width: 350px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     display: flex;
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    margin: 40px;
     transition: .1s;
     border: 2px solid white;
     box-shadow: 0px 0px 40px 3px #66f3f1;
     backdrop-filter: blur(20px);
     padding: 10px;
+    margin: 20px;
 }
 
 .card .title p {
@@ -118,8 +122,11 @@ div.organization {
 .price button {
     background-color: aqua;
     color: black;
-    padding: 10px;
     cursor: pointer;
+    transition: .3s;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 1px solid transparent;
 }
 
 button i {
@@ -229,7 +236,7 @@ div.content {
 .bgImg img {
     position: fixed;
     top: 10%;
-    right: -130px;
+    right: -230px;
     max-height: 100%;
     z-index: -1;
     transform: scaleX(-1)
