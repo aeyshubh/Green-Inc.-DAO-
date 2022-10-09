@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta charset="utf-8">
+    <title>Organisation Details</title> 
+	 <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans|Nova+Mono|Roboto+Condensed" rel="stylesheet">
+	 <link href="https://fonts.googleapis.com/css?family=Parisienne&display=swap" rel="stylesheet">
+	 <link rel="stylesheet" href="css/updateorgstyle.css">
+ </head>
+ <body>
+	<h1>Enter Remaning Details</h1>
+	<div class="content">
+	<section>
+		<div class="register-wrapper">
+		<div class="register-block">
+		<h3 class="register-title">Enter Details</h3>
+			<form id="update_org">
+            <input type="text" name="org_id" hidden="true" value="<%= org_list._id %>"/>
+			<input type="text" placeholder="Enter your Org. Name" value="<%= org_list.org_name %>"/>
+			<input type="email" placeholder="Enter your email" value="<%= org_list.org_email %>"/>
+			<input type="text" name="org_desc" placeholder="Enter your Org. Description" />
+			<input type="number" name="org_req_fund" placeholder="Enter your Org. Fund Requirement" />
+			<input type="submit" value="Update Details"/>
+        </form>
+		</div>
+		</div>
+	</section>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/js/orgscript.js"></script>
+</body>
+</html>

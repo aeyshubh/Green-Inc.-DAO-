@@ -16,7 +16,7 @@ exports.create = (req,res)=>{
         password : req.body.pass1,
         waddress : '',
     })
-    console.log(req.body)
+    console.log(req.body)   
     let pass1 = req.body.pass1;
     let pass2 = req.body.pass2;
 
@@ -27,7 +27,7 @@ exports.create = (req,res)=>{
             .save(investor)
             .then(data=>{
                 //res.send(data)
-                res.redirect('/')
+                res.redirect('/investor_login')
             }).catch(err=>{
                 res.status(500).send({message:err.message||"some error occur while creating investor"})
             })
@@ -47,8 +47,8 @@ exports.createOrg = (req,res)=>{
     //new org
     const org = new orgDB({
         org_name : req.body.org_name,
-        org_desc : '',
-        waddress : '',
+        org_desc : ' ',
+        waddress : req.body.org_wadd,
         org_req_fund : 0,
         org_fund_date : '',
         fund_raised : 0 ,
@@ -66,7 +66,7 @@ exports.createOrg = (req,res)=>{
             .save(org)
             .then(data=>{
                 //res.send(data)
-                res.redirect('/')
+                res.redirect('/org_login')
             }).catch(err=>{
                 res.status(500).send({message:err.message||"some error occur while creating organization"})
             })
@@ -91,7 +91,9 @@ exports.findInvestor = async (req,res)=>{
     if(!data){
         res.status(500).send({message:"User Does not exist"})
     }else{
-        res.redirect("/")
+        req.session.investor_name = data.name
+        console.log(req.session.investor_name)
+        res.redirect("/investor_orgs")
     }
 }
 
@@ -110,7 +112,10 @@ exports.findOrg = async (req,res)=>{
     if(!data){
         res.status(500).send({message:"Org Does not exist"})
     }else{
-        res.redirect("/")
+        req.session.org_name = data.org_name
+        req.session.org_id = data._id
+        console.log(req.session.org_name)
+        res.redirect("/organisation_details")
     }
 }
 
@@ -138,7 +143,7 @@ exports.listOrg = (req,res)=>{
     }
 }
 
-//to update a user by ID
+//to update a Organisation by ID
 exports.update = (req,res)=>{
     if(!req.body){
         res.status(400).send({message:"content cannot be updated"})
@@ -146,7 +151,7 @@ exports.update = (req,res)=>{
     }
     let id  = req.params.id;
     
-    userDB.findByIdAndUpdate(id,req.body,{useFindAndModify:false}).then(data=>{
+    orgDB.findByIdAndUpdate(id,req.body,{useFindAndModify:false}).then(data=>{
         if(!data){
             res.status(404).send({message:`cannot update as ${id} may not be present`})
         }else{
