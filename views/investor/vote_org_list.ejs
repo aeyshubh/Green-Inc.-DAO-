@@ -10,14 +10,16 @@
         <div class="desc">
             <p> <%= org_list[i].org_desc %> </p>
         </div>
+    
         <div class="price">
-            <button> VOTE </button> <p><img src="img/eth-logo.png" alt=""> 00 Counts</p>
+            <a class="getvote" data-id="<%=org_list[i].waddress %>"  > VOTE </a> <p><img src="img/eth-logo.png" alt=""> <%=org_list[i].view_count %> Counts</p>
+        <!-- <input type="text" id="TakeAddress" value="<%=org_list[i].waddress %>"></input> -->
+
         </div>
     </div>
 <% } %>
 
 </div>
-
 <div class="bgImg">
     <img src="img/442.jpg" alt="">
 </div>

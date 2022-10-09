@@ -53,7 +53,8 @@ exports.createOrg = (req,res)=>{
         org_fund_date : '',
         fund_raised : 0 ,
         org_email : req.body.org_email,
-        password : req.body.pass1
+        password : req.body.pass1,
+        view_count : 0
     })
     
     let pass1 = req.body.pass1;
@@ -161,6 +162,18 @@ exports.update = (req,res)=>{
         res.status(500).send({message:'some error occured while updating user'})
     })
 }
+
+exports.incrementOrgVote = (req,res)=>{
+    let wallet = req.params.w_address;
+    orgDB.updateOne({waddress:wallet},{$inc : {view_count :1} }).then(data=>{
+        if(!data){
+            res.status(404).send({message:`cannot update as ${id} may not be present`})
+        }else{
+            res.send(data)
+        }
+    })
+}
+
 
 //to delete a user by ID
 exports.delete = (req,res)=>{

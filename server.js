@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const path = require("path")
 const session = require("express-session")
+const ethers = require("ethers")
 
 const connectDB = require('./server/database/connection')
 

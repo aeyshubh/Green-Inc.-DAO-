@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/donatestyle.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script >
+         var contract;
+        $(document).ready(function(){
+            web3 = new Web3(web3.currentProvider);
+
+            var address = "0xa89dd8A01D09565623AF716D074069cF68F1E9a1";
+            var abi = [
+            {
+                "inputs": [
+                    {
+                        "internalType": "address payable",
+                        "name": "_to",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "_value",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "sendViaSend",
+                "outputs": [],
+                "stateMutability": "payable",
+                "type": "function"
+            },
+            {
+                "stateMutability": "payable",
+                "type": "receive"
+            }
+        ];
+
+            contract = new web3.eth.Contract(abi,address);
+            console.log("Fine");
+
+            if(window.ethereum){
+                web3 = new Web3(window.ethereum);
+                ethereum.enable();
+            }else if(window.web3){
+                web3 = new Web3(web3.currentProvider);
+            }
+        })
+
+        function send()
+        {
+            console.log('INSIDE');
+            var amt = 0;
+            var t_amt = $('#amount1').val();
+            amt = Number(t_amt);
+            amt = amt * 1000000000000000000;
+
+
+            var receiver_add = $('#walletAddress').val();
+            //sender = "0xc91a35AF656EA0329aEbB38fc618c4177b96142c";
+            console.log(amt);
+            console.log(receiver_add);
+
+
+            web3.eth.getAccounts().then(function(accounts)
+            {
+                var acc = accounts[0];
+                console.log(accounts[0]);
+                //return contract.methods.sendViaSend(receiver_add,amt).send({from:acc});
+                return web3.eth.sendTransaction({ from: acc, to: receiver_add, value: amt });
+            }).then(function(tx){
+                console.log(tx);
+            }).catch(function(tx){
+                console.log(tx);
+            })
+            web3.eth.getBalance("0xc91a35AF656EA0329aEbB38fc618c4177b96142c").then(console.log);
+        }
+
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box">
+            <div class="title">
+                <h1><%= org_data.org_name%></h1>
+            </div>
+            <div class="donation">
+                <p><%= org_data.org_req_fund%> ETH</p>
+            </div>
+            <div class="inputval">
+                <form>
+                    <input type="hidden" id="walletAddress" value="<%= org_data.waddress %>">
+                    <input type="text" name="" id="amount1" placeholder="Add ETH">
+                    <button onclick="send()" type="submit">DONATE</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

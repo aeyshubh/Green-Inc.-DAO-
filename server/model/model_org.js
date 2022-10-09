@@ -29,6 +29,9 @@ var schema2 = new mongo.Schema({
     },
     password:{
         type : String
+    },
+    view_count:{
+        type : Number
     }
 })
 
