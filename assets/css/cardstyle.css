@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&family=Roboto&family=Sora&family=Ubuntu&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #00004d;
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.header {
+    position: sticky;
+    top:0;
+    width: 100%;
+    height: auto;
+    padding: 0px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(100px);
+    padding: 30px;
+}
+
+.header .logo img {
+    font-size: 2rem;
+    width: 250px;
+    height: auto;
+}
+
+.header ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    max-width: 800px;
+    list-style: none;
+    margin-top: 0px;
+}
+
+ul li a {
+    color: #66f3f1;
+    text-decoration: none;
+    text-align: center;
+    transition: .3s;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin: 0 10px 0 10px;
+    padding: 10px 30px;
+}
+
+ul li a:hover {
+    border: 1px solid #66f3f1;
+    border-radius: 20px;
+}
+
+div.organization {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 60%;
+    margin: 50px 10px;
+}
+
+.organization .card {
+    min-height: 200px;
+    min-width: 350px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px;
+    transition: .1s;
+    border: 2px solid white;
+    box-shadow: 0px 0px 40px 3px #66f3f1;
+    backdrop-filter: blur(20px);
+    padding: 10px;
+}
+
+.card .title p {
+    color: lightgreen;
+    font-size: 18px;
+    margin: 20px;
+}
+
+.card .price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 10px;
+    width: 90%;
+}
+
+.price button {
+    background-color: aqua;
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button i {
+    font-size: 18px;
+}
+
+.card .price p {
+    color: lightgreen;
+    font-size: 18px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.price p img {
+    width: 50px;
+}
+
+.card .desc p {
+    color: whitesmoke;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin: 10px;
+}
+
+.card .desc {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    max-width: 300px;
+}
+
+.card .readmore {
+    color: lightgreen;
+    font-size: 18px;
+    margin: 10px;
+}
+
+.card p {
+    font-size: 1.5rem;
+    color: black;
+    margin: 30px 0 20px 0;
+}
+
+div.footer {
+    position: relative;
+    height: auto;
+    width: 100%;
+    margin-top: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    background-color: #66f3f1;
+    color: #1b1b1b;
+    padding: 10px;
+}
+
+div.content {
+    font-size: 1rem;
+    position: relative;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 200px;
+}
+
+.content .question {
+    color: yellow;
+    font-size: 1.7rem;
+    margin-left: -600px;
+    margin: 100px 0 10px 0;
+}
+
+.content .answer {
+    color: white;
+    font-size: 1.3rem;
+    margin-left: -600px;
+    margin: 10px 0 10px 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.bgImg img {
+    position: fixed;
+    top: 10%;
+    right: -130px;
+    max-height: 100%;
+    z-index: -1;
+    transform: scaleX(-1)
+}

@@ -1,0 +1,26 @@
+
+<%-include('../include/_cardheader')  %>
+   
+        <div class="organization" id="organization">
+        <% for(i=0;i<org_list.length;i++){ %>
+            <div class="card">
+                <div class="title">
+                    <p> <%= org_list[i].org_name %> </p>
+                </div>
+                <div class="desc">
+                    <p> <%= org_list[i].org_desc %> </p>
+                </div>
+                <div class="price">
+                    <button> DONATE </button> <p><img src="img/eth-logo.png" alt=""> <%= org_list[i].org_req_fund %> ETH</p>
+                </div>
+            </div>
+        <% } %>
+
+        </div>
+        
+        <div class="bgImg">
+            <img src="img/442.jpg" alt="">
+        </div>
+
+    </div>
+<%-include('../include/_cardfooter')  %>
