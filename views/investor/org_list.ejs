@@ -11,7 +11,7 @@
                     <p> <%= org_list[i].org_desc %> </p>
                 </div>
                 <div class="price">
-                    <button> DONATE </button> <p><img src="img/eth-logo.png" alt=""> <%= org_list[i].org_req_fund %> ETH</p>
+                    <a href="/donation_form?id=<%= org_list[i]._id %> " > DONATE </a> <p><img src="img/eth-logo.png" alt=""> <%= org_list[i].org_req_fund %> ETH</p>
                 </div>
             </div>
         <% } %>
@@ -23,14 +23,4 @@
         </div>
 
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
-    <script>
-        window.onload = function (){
-            console.log("hi");
-            toastMixin.fire({
-                title: 'Wrong Password',
-                icon: 'error'
-            });
-        }
-    </script>
 <%-include('../include/_cardfooter')  %>

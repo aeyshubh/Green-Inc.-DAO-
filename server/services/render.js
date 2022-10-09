@@ -54,3 +54,11 @@ exports.renderOrgsDetail = (req,res)=>{
         res.render('/').send({messsage:"Org_user not logged in."})
     }
 }
+
+exports.renderDonationForm = (req,res)=>{
+    axios.get('http://localhost:3000/api/org',{params:{id:req.query.id}}).then(function(data){
+        res.render('investor/donation',{org_data : data.data})
+    }).catch(err=>{
+        res.send(err);
+    })
+}

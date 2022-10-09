@@ -119,7 +119,7 @@ div.organization {
     width: 90%;
 }
 
-.price button {
+.price a {
     background-color: aqua;
     color: black;
     cursor: pointer;
@@ -127,9 +127,11 @@ div.organization {
     padding: 10px 20px;
     border-radius: 30px;
     border: 1px solid transparent;
+    font-size: 0.8rem;
+    text-decoration: none;
 }
 
-button i {
+a i {
     font-size: 18px;
 }
 
