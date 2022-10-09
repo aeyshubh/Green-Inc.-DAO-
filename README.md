@@ -6,7 +6,10 @@
 
 A Blockchain based funding and Voting Appliccation on Ethereum ,Polygon and Filecoin.
 
-
+#Contract Addresses : 
+NFT contract Address :0x89410dc6027FbF5162D94A1a404d5fdB037f44ce (Polygon testnet)
+GREEN Token Address : 0xAD1209DB97E0F933Eb344ccF8fffaBc981D617c6(Goreli testnet)
+Voter Contract Address : 0xd89a4F936D9712A8Ee5A82A1b083F5A04F80D2bB (Goreli Testnet)(In this same voter can't cast two votes and he/she must have GREEN DAO tokens in their metamask Wallet.
 
 
 ## Tech Stack
