@@ -15,7 +15,7 @@
 		<div class="register-block">
 		<h3 class="register-title">Enter Details</h3>
 			<form id="update_org">
-            <input type="text" name="org_id" hidden="true" value="<%= org_list._id %>"/>
+            <input type="hidden" name="org_id" hidden="true" value="<%= org_list._id %>"/>
 			<input type="text" placeholder="Enter your Org. Name" value="<%= org_list.org_name %>"/>
 			<input type="email" placeholder="Enter your email" value="<%= org_list.org_email %>"/>
 			<input type="text" name="org_desc" placeholder="Enter your Org. Description" />
